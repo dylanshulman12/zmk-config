@@ -4,14 +4,10 @@
     };
 
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
+        compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
-        diode-direction = "col2row";
 
-        row-gpios
-            = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // Pin 002
-
-        col-gpios
-            = <&gpio1 13 GPIO_ACTIVE_HIGH>; // Pin 113
+        input-gpios
+            = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin 002
     };
 };
