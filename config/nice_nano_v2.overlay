@@ -1,0 +1,17 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+        diode-direction = "col2row";
+
+        row-gpios
+            = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // Pin 002
+
+        col-gpios
+            = <&gpio1 13 GPIO_ACTIVE_HIGH>; // Pin 113
+    };
+};
